@@ -24,15 +24,15 @@ Function testjs()
         'various encryptions for fun
         encrypted = .compile.run("encrypt", "a message from aes", "my passphrase", "AES")
         decrypted = .compile.run("decrypt", encrypted, "my passphrase", "AES")
-        Debug.Print encrypted, decrypted
+        Debug.Print decrypted, encrypted
         
         encrypted = .compile.run("encrypt", "a message from tripledes", "my passphrase", "TripleDES")
         decrypted = .compile.run("decrypt", encrypted, "my passphrase", "TripleDES")
-        Debug.Print encrypted, decrypted
+        Debug.Print decrypted, encrypted
         
         encrypted = .compile.run("encrypt", "a message from rabbit", "my passphrase", "Rabbit")
         decrypted = .compile.run("decrypt", encrypted, "my passphrase", "Rabbit")
-        Debug.Print encrypted, decrypted
+        Debug.Print decrypted, encrypted
     End With
 
 End Function
