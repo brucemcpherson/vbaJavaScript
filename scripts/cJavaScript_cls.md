@@ -2,7 +2,7 @@
 ## VBA Module: **[cJavaScript](/scripts/cJavaScript.cls "source is here")**
 ### Type: ClassModule  
 
-This procedure list for repo (vbaJavaScript) was automatically created on 6/22/2015 1:30:35 PM by VBAGit.
+This procedure list for repo (vbaJavaScript) was automatically created on 6/22/2015 2:10:41 PM by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in cJavaScript
@@ -41,16 +41,16 @@ scriptUrl|String|False||file link
 VBA Procedure: **simpleUrlGet**  
 Type: **Function**  
 Returns: **String**  
-Return description: ****  
+Return description: **result**  
 Scope: **Public**  
-Description: ****  
+Description: **kind of like a <script> tag - adds a local script file to your code**  
 
 *Public Function simpleUrlGet(fn As String, Optional complain As Boolean = True) As String*  
 
 *name*|*type*|*optional*|*default*|*description*
 ---|---|---|---|---
-fn|String|False||
-complain|Boolean|True| True|
+fn|String|False||file link
+complain|Boolean|True| True|optional complain if an error
 
 
 ---
@@ -129,19 +129,6 @@ Scope: **Public**
 Description: **if you need to deal with arrays, this will convert back and forwards from JS to vba**  
 
 *Public Function addArraySupport() As cJavaScript*  
-
-**no arguments required for this procedure**
-
-
----
-VBA Procedure: **executex**  
-Type: **Function**  
-Returns: **Variant**  
-Return description: ****  
-Scope: **Public**  
-Description: ****  
-
-*Public Function executex()*  
 
 **no arguments required for this procedure**
 
