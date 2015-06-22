@@ -1,7 +1,7 @@
 Option Explicit
 Private pChunk As cStringChunker
 '/**
-' * kind of like a <script> tag - adds a local script file to your code
+' * kind of like a script tag - adds a local script file to your code
 ' * @param {string} scriptFile file name
 ' * @return {cJavaScript} self
 ' */
@@ -10,7 +10,7 @@ Public Function addFile(scriptFile As String) As cJavaScript
     Set addFile = Me
 End Function
 '/**
-' * kind of like a <script> tag - adds a local script file to your code
+' * kind of like a script tag - adds a local script file to your code
 ' * @param {string} scriptUrl file link
 ' * @return {cJavaScript} self
 ' */
@@ -19,7 +19,7 @@ Public Function addUrl(scriptUrl As String) As cJavaScript
     Set addUrl = Me
 End Function
 '/**
-' * kind of like a <script> tag - adds a local script file to your code
+' * kind of like a script tag - adds a local script file to your code
 ' * @param {string} fn file link
 ' * @param {boolean} complain optional complain if an error
 ' * @return {string} result
