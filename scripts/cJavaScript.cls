@@ -75,6 +75,25 @@ Public Function clear() As cJavaScript
     Set clear = Me
 End Function
 '/**
+' * expose the stringchunker
+' * @return {cStringChunker}  the code chunker
+' */
+Public Property Get chunker() As cStringChunker
+    Set chunker = pChunk
+End Property
+'/**
+' * apps script sometimes have script tags
+' * @return {cJavaScript}  self
+' */
+Public Function removeScriptTags() As cJavaScript
+    Dim s As String
+    s = Replace(Replace(pChunk.toString, "<script>", ""), "</script>", "")
+    If (s <> pChunk.toString()) Then
+        pChunk.clear.add s
+    End If
+    Set removeScriptTags = Me
+End Function
+'/**
 ' * execute code
 ' * @return {ScriptControl} the script control to execute run against
 ' */
