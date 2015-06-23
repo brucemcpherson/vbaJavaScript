@@ -2,7 +2,7 @@
 ## VBA Module: **[cJavaScript](/scripts/cJavaScript.cls "source is here")**
 ### Type: ClassModule  
 
-This procedure list for repo (vbaJavaScript) was automatically created on 6/22/2015 2:37:56 PM by VBAGit.
+This procedure list for repo (vbaJavaScript) was automatically created on 6/23/2015 1:44:21 PM by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in cJavaScript
@@ -103,6 +103,32 @@ Scope: **Public**
 Description: **clears the code**  
 
 *Public Function clear() As cJavaScript*  
+
+**no arguments required for this procedure**
+
+
+---
+VBA Procedure: **chunker**  
+Type: **Get**  
+Returns: **[cStringChunker](/libraries/cStringChunker_cls.md "cStringChunker")**  
+Return description: **the code chunker**  
+Scope: **Public**  
+Description: **expose the stringchunker**  
+
+*Public Property Get chunker() As cStringChunker*  
+
+**no arguments required for this procedure**
+
+
+---
+VBA Procedure: **removeScriptTags**  
+Type: **Function**  
+Returns: **[cJavaScript](/scripts/cJavaScript_cls.md "cJavaScript")**  
+Return description: **self**  
+Scope: **Public**  
+Description: **apps script sometimes have script tags**  
+
+*Public Function removeScriptTags() As cJavaScript*  
 
 **no arguments required for this procedure**
 
