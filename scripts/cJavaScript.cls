@@ -10,7 +10,23 @@ Public Function addFile(scriptFile As String) As cJavaScript
     Set addFile = Me
 End Function
 '/**
-' * kind of like a script tag - adds a local script file to your code
+' * kind of like a script tag - adds a local apps script stuff
+' * @param {string} scriptUrl the web app providing the code
+' * @return {cJavaScript} self
+' */
+Public Function addAppsScript(scriptUrl As String) As cJavaScript
+    Dim s As String
+    
+    s = simpleUrlGet(scriptUrl)
+    
+    '// need to do special cleaning for apps script
+    pChunk.addLine (removeHtmlEscape(s))
+    Set addAppsScript = removeScriptTags()
+
+End Function
+        
+'/**
+' * kind of like a script tag - adds a hosted file to your code
 ' * @param {string} scriptUrl file link
 ' * @return {cJavaScript} self
 ' */
@@ -81,18 +97,7 @@ End Function
 Public Property Get chunker() As cStringChunker
     Set chunker = pChunk
 End Property
-'/**
-' * apps script sometimes have script tags
-' * @return {cJavaScript}  self
-' */
-Public Function removeScriptTags() As cJavaScript
-    Dim s As String
-    s = Replace(Replace(pChunk.toString, "<script>", ""), "</script>", "")
-    If (s <> pChunk.toString()) Then
-        pChunk.clear.add s
-    End If
-    Set removeScriptTags = Me
-End Function
+
 '/**
 ' * execute code
 ' * @return {ScriptControl} the script control to execute run against
@@ -126,7 +131,26 @@ Public Function addArraySupport() As cJavaScript
         "})(Xliberation || {});"
     Set addArraySupport = Me
 End Function
+Public Function removeHtmlEscape(t As String) As String
 
+    Dim oXML As Object
+    ' as far as i know, only << are left escaped by contentservice
+    removeHtmlEscape = Replace(t, "&lt;", "<")
+    
+End Function
+'/**
+' * apps script sometimes have script tags
+' * @return {cJavaScript} self
+' */
+Public Function removeScriptTags() As cJavaScript
+    Dim s As String, t As String
+    t = pChunk.toString
+    Set removeScriptTags = Me
+    s = Replace(Replace(t, "<script>", ""), "</script>", "")
+    If (s <> t) Then
+        pChunk.clear.add (s)
+    End If
+End Function
 
 Private Sub Class_Initialize()
     Set pChunk = New cStringChunker
