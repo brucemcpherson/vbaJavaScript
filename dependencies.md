@@ -1,5 +1,5 @@
 # VBA Project: vbaJavaScript
-This repo (vbaJavaScript) was automatically created on 6/23/2015 1:44:21 PM by VBAGit.For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation") or [contact me on G+](https://plus.google.com/+BruceMcpherson "Bruce McPherson - GDE")  
+This repo (vbaJavaScript) was automatically created on 6/24/2015 12:01:39 PM by VBAGit.For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation") or [contact me on G+](https://plus.google.com/+BruceMcpherson "Bruce McPherson - GDE")  
 ## Details for VBA project vbaJavaScript
 Where possibile directly referenced or sub referenced library sources have been copied to this repository  
 ### Modules of vbaJavaScript included in this repo
@@ -11,9 +11,10 @@ cJavaScript|ClassModule|[cJavaScript.cls](scripts/cJavaScript.cls "script source
 ### All dependencies and sub dependencies in this repo  
 *name*|*type*|*source*|*docs*  
 ---|---|---|---  
-UsefulStuff|StdModule|[UsefulStuff.vba](libraries/UsefulStuff.vba "library source")|[UsefulStuff_vba.md](libraries/UsefulStuff_vba.md "library docs")  
+usefulStuff|StdModule|[usefulStuff.vba](libraries/usefulStuff.vba "library source")|[usefulStuff_vba.md](libraries/usefulStuff_vba.md "library docs")  
 usefulColorStuff|StdModule|[usefulColorStuff.vba](libraries/usefulColorStuff.vba "library source")|[usefulColorStuff_vba.md](libraries/usefulColorStuff_vba.md "library docs")  
 cStringChunker|ClassModule|[cStringChunker.cls](libraries/cStringChunker.cls "library source")|[cStringChunker_cls.md](libraries/cStringChunker_cls.md "library docs")  
+usefulSheetStuff|StdModule|[usefulSheetStuff.vba](libraries/usefulSheetStuff.vba "library source")|[usefulSheetStuff_vba.md](libraries/usefulSheetStuff_vba.md "library docs")  
   
 ###Excel references  
 ####These references were detected in the workbook (cDataSet.xlsm) this repo was created from. You may not need them all  
