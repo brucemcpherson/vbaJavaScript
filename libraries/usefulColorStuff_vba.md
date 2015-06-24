@@ -2,7 +2,7 @@
 ## VBA Module: **[usefulColorStuff](/libraries/usefulColorStuff.vba "source is here")**
 ### Type: StdModule  
 
-This procedure list for repo (vbaJavaScript) was automatically created on 6/23/2015 1:44:20 PM by VBAGit.
+This procedure list for repo (vbaJavaScript) was automatically created on 6/24/2015 12:01:38 PM by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in usefulColorStuff
