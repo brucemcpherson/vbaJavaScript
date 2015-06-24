@@ -1,4 +1,4 @@
-'gistThat@mcpher.com :do not modify this line - see ramblings.mcpher.com for details: updated on 8/18/2014 3:54:06 PM : from manifest:3414394 gist https://gist.github.com/brucemcpherson/3414615/raw
+'gistThat@mcpher.com :do not modify this line - see ramblings.mcpher.com for details: updated on 8/18/2014 4:47:46 PM : from manifest:3414394 gist https://gist.github.com/brucemcpherson/3414615/raw
 ' this is all about colors
 Option Explicit
 ' v2.7   3414615
