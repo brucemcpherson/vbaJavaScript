@@ -1,24 +1,48 @@
 Option Explicit
-
+'<script src="https://cdn.polyfill.io/v1/polyfill.min.js"></script>
 Private Function testGas()
-    Dim js As New cJavaScript, encrypted As String, decrypted As String
+    Dim js As New cJavaScript, start As Double, numberOfTests As Long, result As Variant
+    numberOfTests = 10000
     
     With js
         ' not really necessary first time in
         .clear
 
-        ' get my apps script code
-        .addUrl "https://script.google.com/macros/s/AKfycbzVhdyNg3-9jBu6KSLkYIwN48vuXCp6moOLQzQa7eXar7HdWe8/exec?manifests=color"
-
+        ' here's a couple of polyfills to bring it more or less up to apps-script levels
+        .addUrl "https://cdnjs.cloudflare.com/ajax/libs/json2/20150503/json2.min.js"
+        .addUrl "https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.7/es5-shim.min.js"
         
-        ' add my code
-        .addCode _
-            "function clientGenerateUnique() {" & _
-            "    return 1;//Utils.generateUniqueKey();" & _
-            "}"
+        ' get my code from apps script
+        .addAppsScript "https://script.google.com/macros/s/AKfycbzVhdyNg3-9jBu6KSLkYIwN48vuXCp6moOLQzQa7eXar7HdWe8/exec?manifests=color"
 
-        'try these out
-        Debug.Print .compile.run("clientGenerateUnique", 1)
+        ' my code
+        .addCode ("function compareColors (rgb1, rgb2) { " & _
+                " return theColorProp(rgb1).compareColorProps(theColorProp(rgb2).getProperties()) ; " & _
+            "}" & _
+            "function compareColorTest (numberOfTests) {" & _
+                "for (var i = 0 , t = 0 ; i < numberOfTests ; i++ ) { " & _
+                "   t += compareColors ( Math.round(Math.random() * VBCOLORS.vbWhite) , Math.round(Math.random() * VBCOLORS.vbWhite) ); " & _
+                "}" & _
+                " return 'average color distance:' + t/i;" & _
+            "}" & _
+            "function theColorProp (rgb1) { " & _
+                " return new ColorMath(rgb1) ; " & _
+            "}" & _
+            "function theColorPropStringified (rgb1) { " & _
+                " return JSON.stringify(theColorProp(rgb1).getProperties()) ; " & _
+            "}")
+        
+        'a stringified color properties
+        Debug.Print .compile.run("theColorPropStringified", vbBlue)
+      
+        'compare a couple of colors
+        Debug.Print .compile.run("compareColors", vbBlue, vbRed)
+        
+        ' do a performance test
+        start = tinyTime
+        result = .compile.run("compareColorTest", numberOfTests)
+        Debug.Print "time to complete in JS " & (tinyTime - start)
+        Debug.Print result
       
     End With
 
