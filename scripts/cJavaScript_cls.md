@@ -2,7 +2,7 @@
 ## VBA Module: **[cJavaScript](/scripts/cJavaScript.cls "source is here")**
 ### Type: ClassModule  
 
-This procedure list for repo (vbaJavaScript) was automatically created on 6/23/2015 1:44:21 PM by VBAGit.
+This procedure list for repo (vbaJavaScript) was automatically created on 6/24/2015 12:01:39 PM by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in cJavaScript
@@ -23,12 +23,27 @@ scriptFile|String|False||file name
 
 
 ---
+VBA Procedure: **addAppsScript**  
+Type: **Function**  
+Returns: **[cJavaScript](/scripts/cJavaScript_cls.md "cJavaScript")**  
+Return description: **self**  
+Scope: **Public**  
+Description: **kind of like a script tag - adds a local apps script stuff**  
+
+*Public Function addAppsScript(scriptUrl As String) As cJavaScript*  
+
+*name*|*type*|*optional*|*default*|*description*
+---|---|---|---|---
+scriptUrl|String|False||the web app providing the code
+
+
+---
 VBA Procedure: **addUrl**  
 Type: **Function**  
 Returns: **[cJavaScript](/scripts/cJavaScript_cls.md "cJavaScript")**  
 Return description: **self**  
 Scope: **Public**  
-Description: **kind of like a script tag - adds a local script file to your code**  
+Description: **kind of like a script tag - adds a hosted file to your code**  
 
 *Public Function addUrl(scriptUrl As String) As cJavaScript*  
 
@@ -121,19 +136,6 @@ Description: **expose the stringchunker**
 
 
 ---
-VBA Procedure: **removeScriptTags**  
-Type: **Function**  
-Returns: **[cJavaScript](/scripts/cJavaScript_cls.md "cJavaScript")**  
-Return description: **self**  
-Scope: **Public**  
-Description: **apps script sometimes have script tags**  
-
-*Public Function removeScriptTags() As cJavaScript*  
-
-**no arguments required for this procedure**
-
-
----
 VBA Procedure: **compile**  
 Type: **Function**  
 Returns: **Variant**  
@@ -155,6 +157,34 @@ Scope: **Public**
 Description: **if you need to deal with arrays, this will convert back and forwards from JS to vba**  
 
 *Public Function addArraySupport() As cJavaScript*  
+
+**no arguments required for this procedure**
+
+
+---
+VBA Procedure: **removeHtmlEscape**  
+Type: **Function**  
+Returns: **String**  
+Return description: ****  
+Scope: **Public**  
+Description: ****  
+
+*Public Function removeHtmlEscape(t As String) As String*  
+
+*name*|*type*|*optional*|*default*|*description*
+---|---|---|---|---
+t|String|False||
+
+
+---
+VBA Procedure: **removeScriptTags**  
+Type: **Function**  
+Returns: **[cJavaScript](/scripts/cJavaScript_cls.md "cJavaScript")**  
+Return description: **self**  
+Scope: **Public**  
+Description: **apps script sometimes have script tags**  
+
+*Public Function removeScriptTags() As cJavaScript*  
 
 **no arguments required for this procedure**
 
