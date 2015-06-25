@@ -2,7 +2,7 @@
 ## VBA Module: **[jscript](/scripts/jscript.vba "source is here")**
 ### Type: StdModule  
 
-This procedure list for repo (vbaJavaScript) was automatically created on 6/24/2015 12:01:38 PM by VBAGit.
+This procedure list for repo (vbaJavaScript) was automatically created on 6/25/2015 10:03:23 AM by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in jscript
@@ -55,5 +55,18 @@ Scope: **Private**
 Description: ****  
 
 *Private Function testJs()*  
+
+**no arguments required for this procedure**
+
+
+---
+VBA Procedure: **jsvsvbaTests**  
+Type: **Function**  
+Returns: **Variant**  
+Return description: ****  
+Scope: **Private**  
+Description: ****  
+
+*Private Function jsvsvbaTests()*  
 
 **no arguments required for this procedure**
