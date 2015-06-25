@@ -176,3 +176,51 @@ Private Function testJs()
     End With
 
 End Function
+
+Private Function jsvsvbaTests()
+    Dim js As New cJavaScript, i As Long, vbaResult As Double, _
+        javaScriptResult As Double, rgb1 As Long, rgb2 As Long, _
+        numberOfTests As Long
+    
+    numberOfTests = 10000
+    With js
+        ' not really necessary first time in
+        .clear
+
+        ' here's a couple of polyfills to bring it more or less up to apps-script levels
+        .addUrl "https://cdnjs.cloudflare.com/ajax/libs/json2/20150503/json2.min.js"
+        .addUrl "https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.7/es5-shim.min.js"
+        
+        ' get my code directly from apps script
+        .addAppsScript "https://script.google.com/macros/s/AKfycbzVhdyNg3-9jBu6KSLkYIwN48vuXCp6moOLQzQa7eXar7HdWe8/exec?manifests=color"
+        
+        ' add my unit test code
+        .addCode ("function compareColors (rgb1, rgb2) { " & _
+                        " return new ColorMath(rgb1).compareColorProps(new ColorMath(rgb2).getProperties()) ; " & _
+                    "}")
+            
+        
+        'well run lots of random tests and check they are the same
+        For i = 1 To numberOfTests
+            
+            ' get some test data
+            rgb1 = CLng(Round(Rnd() * vbWhite))
+            rgb2 = CLng(Round(Rnd() * vbWhite))
+            
+            ' run it in VBA
+            vbaResult = compareColors(rgb1, rgb2)
+            
+            ' run it in javaScript
+            javaScriptResult = .compile.run("compareColors", rgb1, rgb2)
+            
+            ' should be the same result
+            ' but need to round a bit as you cant compare doubles for exact equality
+            ' so we'll compare to 8 decimal places
+            Debug.Assert Round(vbaResult, 8) = Round(javaScriptResult, 8)
+        Next i
+
+     
+
+        
+    End With
+End Function
