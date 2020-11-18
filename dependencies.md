@@ -1,5 +1,5 @@
 # VBA Project: vbaJavaScript
-This repo (vbaJavaScript) was automatically created on 6/25/2015 10:03:23 AM by VBAGit.For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation") or [contact me on G+](https://plus.google.com/+BruceMcpherson "Bruce McPherson - GDE")  
+This repo (vbaJavaScript) was automatically created on 6/25/2015 10:03:23 AM by VBAGit.For more information see the [desktop liberation site](https://ramblings.mcpher.com/drive-sdk-and-github/getting-your-apps-scripts-to-github/ "desktop liberation") or [contact me on G+](https://plus.google.com/+BruceMcpherson "Bruce McPherson - GDE")  
 ## Details for VBA project vbaJavaScript
 Where possibile directly referenced or sub referenced library sources have been copied to this repository  
 ### Modules of vbaJavaScript included in this repo
